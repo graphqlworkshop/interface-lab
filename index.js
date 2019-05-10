@@ -3,25 +3,41 @@ const { ApolloServer, gql } = require("apollo-server");
 const employees = require("./data/employees");
 
 const typeDefs = gql`
-  type Employee {
+  interface Employee {
     id: ID!
     firstName: String!
     lastName: String!
-    job: JobType
-    liftOperator_yearsExperience: Int
-    skiPatrol_certified: Boolean
-    instructor_level: PatrolLevel
-    bartender_assignment: Location
   }
 
-  enum JobType {
-    LIFTOPERATOR
-    SKIPATROL
-    INSTRUCTOR
-    BARTENDER
+  type Bartender implements Employee {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    assignment: Location!
   }
 
-  enum PatrolLevel {
+  type LiftOperator implements Employee {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    yearsExperience: Int!
+  }
+
+  type SkiPatrol implements Employee {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    certified: Boolean!
+  }
+
+  type Instructor implements Employee {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    level: Level
+  }
+
+  enum Level {
     LEVELONE
     LEVELTWO
     LEVELTHREE
@@ -34,27 +50,32 @@ const typeDefs = gql`
   }
 
   type Query {
-    allEmployees(job: JobType): [Employee!]!
+    allEmployees: [Employee!]!
+    allBartenders: [Bartender!]!
+    allInstructors: [Instructor!]!
+    allLiftOperators: [LiftOperator!]!
+    allSkiPatrol: [SkiPatrol!]!
     totalEmployees: Int!
   }
 `;
 
 const resolvers = {
   Query: {
-    allEmployees: (parent, { job }, { employees }) => {
-      if (job) {
-        return employees.filter(e => e.job === job);
-      } else {
-        return employees;
-      }
-    },
+    allEmployees: (parent, args, { employees }) => employees,
     totalEmployees: (parent, args, { employees }) => employees.length
   },
   Employee: {
-    liftOperator_yearsExperience: parent => parent.yearsExperience,
-    instructor_level: parent => parent.level,
-    skiPatrol_certified: parent => parent.certified,
-    bartender_assignment: parent => parent.assignment
+    __resolveType: parent => {
+      if (parent.assignment) {
+        return "Bartender";
+      } else if (parent.yearsExperience) {
+        return "LiftOperator";
+      } else if (parent.certified) {
+        return "SkiPatrol";
+      } else {
+        return "Instructor";
+      }
+    }
   }
 };
 
