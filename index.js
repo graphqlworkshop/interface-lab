@@ -62,6 +62,18 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     allEmployees: (parent, args, { employees }) => employees,
+    allBartenders: (parent, args, { employees }) => {
+      return employees.filter(e => e.assignment);
+    },
+    allInstructors: (parent, args, { employees }) => {
+      return employees.filter(e => e.level);
+    },
+    allLiftOperators: (parent, args, { employees }) => {
+      return employees.filter(e => e.yearsExperience);
+    },
+    allSkiPatrol: (parent, args, { employees }) => {
+      return employees.filter(e => e.certified);
+    },
     totalEmployees: (parent, args, { employees }) => employees.length
   },
   Employee: {
