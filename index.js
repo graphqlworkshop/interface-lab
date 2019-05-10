@@ -10,7 +10,7 @@ const typeDefs = gql`
     job: JobType
     liftOperator_yearsExperience: Int
     skiPatrol_certified: Boolean
-    instructor_level: PatrolLevel
+    instructor_level: Level
     bartender_assignment: Location
   }
 
@@ -21,7 +21,7 @@ const typeDefs = gql`
     BARTENDER
   }
 
-  enum PatrolLevel {
+  enum Level {
     LEVELONE
     LEVELTWO
     LEVELTHREE
