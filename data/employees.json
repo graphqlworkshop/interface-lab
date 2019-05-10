@@ -1,0 +1,72 @@
+[
+  {
+    "id": "0001",
+    "firstName": "Topher",
+    "lastName": "Saunders",
+    "job": "BARTENDER",
+    "assignment": "SUMMIT"
+  },
+  {
+    "id": "0002",
+    "firstName": "Gina",
+    "lastName": "Martel",
+    "job": "SKIPATROL",
+    "certified": true
+  },
+  {
+    "id": "0003",
+    "firstName": "Shane",
+    "lastName": "Shankman",
+    "job": "INSTRUCTOR",
+    "level": "LEVELONE"
+  },
+  {
+    "id": "0004",
+    "firstName": "Sydney",
+    "lastName": "Shankman",
+    "job": "INSTRUCTOR",
+    "level": "LEVELTWO"
+  },
+  {
+    "id": "0005",
+    "firstName": "Michael",
+    "lastName": "Miller",
+    "job": "BARTENDER",
+    "assignment": "ICEBAR"
+  },
+  {
+    "id": "0006",
+    "firstName": "Alex",
+    "lastName": "Banja",
+    "job": "LIFTOPERATOR",
+    "yearsExperience": 4
+  },
+  {
+    "id": "0007",
+    "firstName": "Denise",
+    "lastName": "Lankman",
+    "job": "SKIPATROL",
+    "certified": false
+  },
+  {
+    "id": "0008",
+    "firstName": "Shawni",
+    "lastName": "Horizon",
+    "job": "LIFTOPERATOR",
+    "yearsExperience": 1
+  },
+  {
+    "id": "0009",
+    "firstName": "Matt",
+    "lastName": "Christie",
+    "job": "INSTRUCTOR",
+    "level": "LEVELTHREE"
+  },
+  {
+    "id": "0010",
+    "firstName": "Matilda",
+    "lastName": "Hobson",
+    "job": "BARTENDER",
+    "assignment": "EDGEDECK"
+  }
+]

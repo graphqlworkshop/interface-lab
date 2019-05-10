@@ -1,0 +1,26 @@
+{
+  "name": "union-lab",
+  "version": "1.0.0",
+  "description": "A refactoring lab to learn more about interfaces",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphqlworkshop/union-lab.git"
+  },
+  "author": "Moon Highway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphqlworkshop/union-lab/issues"
+  },
+  "homepage": "https://github.com/graphqlworkshop/union-lab#readme",
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "graphql": "^14.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
