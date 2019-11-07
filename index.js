@@ -82,7 +82,7 @@ const resolvers = {
         return "Bartender";
       } else if (parent.yearsExperience) {
         return "LiftOperator";
-      } else if (parent.certified) {
+      } else if (parent.certified !== undefined) {
         return "SkiPatrol";
       } else {
         return "Instructor";
