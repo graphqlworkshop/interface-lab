@@ -17,10 +17,8 @@
   },
   "homepage": "https://github.com/graphqlworkshop/interface-lab#readme",
   "dependencies": {
-    "apollo-server": "^2.5.0",
-    "graphql": "^14.3.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.0"
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.8.0",
+    "nodemon": "^2.0.15"
   }
 }
